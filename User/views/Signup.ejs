@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup</title>
+    <link rel="stylesheet" href="./signupstyle.css">
+</head>
+<body>
+    <form action="/signup" method="post" id="signup">
+        <div id="Signup">
+            <img src="./Logodb.png" alt="" id="logo">
+            <h1 id="heading">Signup</h1>
+            <input type="text" name="fullName" id="fullName" placeholder="Full name">
+            <p name="name-error" id="name_error"></p>
+            <input type="text" id="email" name="email" placeholder="Email">
+            <p name="email_error" id="email_error"></p>
+            <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number">
+            <p name="num_error" id="num_error"></p>
+            <input type="text" name="address" id="address" placeholder="Address">
+            <p name="add_error" id="add_error"></p>
+            <input type="text" name="city" id="city" placeholder="City">
+            <p name="city_error" id="city_error"></p>
+            <input type="text" name="area" id="area" placeholder="Area">
+            <p name="area_error" id="area_error"></p>
+            <input type="text" name="landmark" id="landmark" placeholder="Landmark">
+            <p name="land_error" id="land_error"></p>
+            <input type="password" name="password" id="password" placeholder="Enter your password here...">
+            <p name="pass_error" id="pass_error"></p>
+            <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Re-Enter password here...">
+            <p name="cpass_error" id="cpass_error"></p>
+            <button type="submit" value="Register" id="signup-btn">Signup</button>
+            <a id="lp" href="/login">Already have an account? Click here</a>
+        </div>
+    </form>
+    <script>
+        let form = document.querySelector('form');
+        let emailError = document.querySelector('#email_error');
+        let passError = document.querySelector('#pass_error');
+        let nameError = document.querySelector("#name_error")
+        let addError = document.querySelector("#add_error")
+        let areaError = document.querySelector("#area_error")
+        let cityError = document.querySelector("#city_error")
+        let numError = document.querySelector("#num_error")
+        let landError = document.querySelector("#land_error")
+        let confirmPassError = document.querySelector("#cpass_error")
+    
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default form submission
+    
+            emailError.textContent = '';
+            passError.textContent = '';
+            confirmPassError.textContent = ''; // Clear any previous error messages
+    
+           let fullName = form.fullName.value;
+           let email = form.email.value;
+           let phoneNumber = form.phoneNumber.value;
+           let address = form.address.value;
+           let city = form.city.value;
+           let area = form.area.value;
+           let landmark = form.landmark.value;
+           let password = form.password.value;
+           let confirmPassword = form.confirmPassword.value;
+    
+            // Check if password and confirm password match
+            if (password !== confirmPassword) {
+                confirmPassError.textContent = 'Passwords do not match';
+                return; // Prevent form submission if passwords don't match
+            }
+    
+            try {
+                const res = await fetch('/signup', {
+                    method: 'POST',
+                    body: JSON.stringify({ fullName, email, phoneNumber, address, city, area, landmark, password, confirmPassword }),
+                    headers: { 'Content-Type': 'application/json' }
+                });
+    
+                const data = await res.json();
+    
+                if (data.error) {
+                    if (data.error.fullName) {
+                        document.querySelector('#name_error').textContent = data.error.fullName;
+                    }
+                    if (data.error.email) {
+                        document.querySelector('#email_error').textContent = data.error.email;
+                    }if(data.error.phoneNumber){
+                        document.querySelector('#num_error').textContent = data.error.phoneNumber;
+                    }if(data.error.address){
+                        document.querySelector('#add_error').textContent = data.error.address;
+    
+                    }if(data.error.area){
+                        document.querySelector("#area_error").textContent = data.error.area;
+                    }
+                    if(data.error.city){
+                        document.querySelector("#city_error").textContent = data.error.city;
+    
+                    }
+                    if(data.error.landmark){
+                        document.querySelector("#land_error").textContent = data.error.landmark;
+    
+                    }if(data.error.password){
+                        document.querySelector("#pass_error").textContent = data.error.password;
+    
+                    }if(data.error.confirmPassword){
+                        document.querySelector("#cpass_error").textContent = data.error.confirmPassword;
+    
+                    }
+                } else if (data.user) {
+                    window.location.href = '/login';
+                }
+            } catch (error) {
+                console.log(error);
+            }
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #log{
+            border: 2px solid transparent;
+            height: 50vh;
+            width: 390px;
+            position: absolute;
+            top: 15%;
+            left: 35%;
+            box-shadow: 2px 1px 5px 0.5px;
+            box-sizing: border-box;
+            justify-content: center;
+            display: flex;
+
+        }
+        #su{
+            position: absolute;
+            font-size: large;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            left: 40%;
+            top: 10%;
+        }
+        
+        #email{
+            position: absolute;
+            height: 4vh;
+            top: 27%;
+            left: 13%;
+            width: 65%;
+            border: 2px solid gray;
+            border-radius:6px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: medium;
+            outline: none;
+         
+        }
+        #email_error{
+            position: absolute;
+            height: 4vh;
+            top: 22%;
+            left: 13%;
+            width: 65%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: medium;
+        }
+        
+       
+        #pass{
+            position: absolute;
+            height: 4vh;
+            top: 44%;
+            right:20%;
+            width: 65%;
+            border: 2px solid gray;
+            border-radius:6px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: medium;
+            outline: none;
+        }
+        #pass_error{
+            position: absolute;
+            height: 4vh;
+            top: 39%;
+            left: 13%;
+            width: 65%;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: medium;
+        }
+       
+        #btns{
+                position: absolute;
+                height: 9%;
+                top: 60%;
+                right: 35%;
+                width: 40%;
+                border: 2px solid lightgray;
+                outline: none;
+                border-radius:3px;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                font-size: medium;
+                background-color: darkred;
+                color: white;
+                border: 2px solid darkred;
+                border-radius: 15px;
+             
+            }
+            #btns:hover{
+                color: darkred;
+                background-color: white;
+            }
+            #logos{
+                position: absolute;
+                width: 95px;
+                height: 12vh;
+                border: 2px solid gray;
+                border-radius: 50%;
+                bottom: 88%;
+                left: 35%;
+            }#sign{
+                position: absolute;
+                top: 73%;
+                left: 25%;
+                text-decoration: none;
+                color: black;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            }
+            #sign:hover{
+                color: darkred;
+                text-decoration: underline;
+            }
+           
+    </style>
+</head>
+<body>
+    <form action="/Loginpage" method="post">
+    <div id="log">
+        
+    <img src="./2.png" id="logos" alt="">
+        <h1 id="su">Login</h1>
+        <span id="email_error" spellcheck="false"> </span><br/>
+        <input type="text" name="email" id="email" spellcheck="false" onkeyup="validatez()" placeholder=" Email Address" required>
+    <span id="pass_error" spellcheck="false"> </span><br/>
+        <input type="password" name="pass" id="pass" spellcheck="false" onkeyup="passvalidate()" placeholder=" Password" required>
+        <a href="./Signup.html" id="sign">Don't have an account?</a>
+       <button type="submit" id="btns">Login</button>
+    </div>
+</form>
+    <script>
+        
+        
+        var emails = document.getElementById("email");
+        var emailerror = document.getElementById("email_error");
+
+        function validatez(){
+            if(!emails.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+                emailerror.innerHTML = "*Please, Enter a valid email";
+                emails.style.border= "3px solid red";
+                emailerror.style.color ="red";
+                return false;
+            }else{
+                emailerror.innerHTML = "Valid Email";
+                emailerror.style.color = "Green";
+                emails.style.border = "3px solid green";
+                return true;
+            }
+        
+    }
+   
+
+   
+    function passvalidate(){
+        var passwords = document.getElementById("pass");
+        var passerror = document.getElementById("pass_error");
+        
+            if(passwords.value=="" || passwords.value.length <=7){
+                passerror.innerHTML = "*Please,Enter the valid password";
+                passwords.style.border= "3px solid red";
+                passerror.style.color ="red";
+               
+                return false;
+            }else{
+                passerror.innerHTML = " ";
+                passerror.style.color = "Green";
+                passwords.style.border = "3px solid green";
+                return true;
+            }
+        
+    }
+   
+    
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+  <!-- function toggleSidebar() {
+        const sidebar = document.querySelector('#sidebar');
+        sidebar.style.display = sidebar.style.display === 'flex' ? 'none' : 'flex';
+
+    }
+    function togglenoti() {
+        const notifications = document.querySelector('#notification');
+        notifications.style.display = notifications.style.display === 'flex' ? 'none' : 'flex';
+
+    }
+    //Fetching the info of users in profile
+   // let namep = document.getElementById("namep").innerText= "Name: "+user.fullName;
+    //let emailp = document.getElementById("emailp").innerText = "Email: "+user.email
+    //let phonep = document.getElementById("phonep").innerText="Phone: "+user.phoneNumber;
+    //let addressp = document.getElementById("addressp").innerText="Address: "+user.address;
+    //let cityp = document.getElementById("cityp").innerText="City: "+user.city;
+    //let areap = document.getElementById("areap").innerText="Area: "+user.area;
+    //let landp = document.getElementById("landp").innerText="Landmark: "+ user.landmark;
+    
+    const form = document.querySelector('form');
+    const emailp = document.querySelector('#emailp');
+    const namep = document.querySelector('#namep');
+    const phonep = document.querySelector('#phone');
+    const addressp = document.querySelector('#addressp');
+    const areap = document.querySelector('#areap');
+    const cityp = document.querySelector('#cityp');
+    const landp = document.querySelector('#landp');
+    form.addEventListener('DOMContentLoaded',async(e)=>{
+        e.preventDefault();//page refresh huna bata rokxa
+        
+      
+
+        const email = form.email.value;
+        const password = form.password.value;
+        try{
+            const res = await fetch('/signup',{
+                method:'POST',
+                body: JSON.stringify({email, password}),
+                headers:{'content-Type':'application/json'}
+            });
+            const data = await res.json();
+            console.log(data);
+            if(data.user){
+                emailp.textContent=data.user.email;
+                namep.textContent=data.user.name;
+                phonep.textContent=data.user.phoneNumber;
+                addressp.textContent=data.user.address;
+                areap.textContent=data.user.area;
+                cityp.textContent=data.user.city;
+                landp.textContent=data.user.landmark;
+
+            }
+           
+            
+        }catch(err){
+            console.log(err);
+        }
+    })
+    
+
+    </script>
+    
+
+
+
+     <!-- <% if(message){%>
+                <div class="alert alert-dismissible fade show alert-<%= message.type %>" role="alert">
+                    <button class="btn-close" type="button" data-bs-dismiss ="alert" 
+                    aria-label="Close"></button>
+                    <strong><%= message.message %></strong>
+                </div>
+
+                <%} %> -->
+
+
+
+                 // .then(savedItem => {
+        //     console.log("Item saved successfully");
+        //     res.redirect('/admin');
+        // })
+        // .catch(error => {
+        //     console.error("Error saving item:", error);
+        //     res.status(500).json({ error: error.message });
+        // });
+});

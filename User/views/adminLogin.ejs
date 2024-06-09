@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="./Login.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>     
+<body>
+    <form action="/adminLogin" method="post">
+    <div id="log">
+        
+    <img src="./Logodb.png" id="logo" alt="">
+        <h1 id="heading">Admin</h1>
+       
+        <input type="text" name="email" id="email" spellcheck="false"  placeholder=" Email Address" required>
+        <span id="email_error" spellcheck="false"></span><br/>
+        <input type="password" name="password" id="password" spellcheck="false"  placeholder=" Password" required>
+        <span id="pass_error" spellcheck="false"> </span><br/>
+       <button type="submit" id="btns">Login</button>
+       <a href="/login">Log in as user</a>
+    </div>
+</form>
+    <script>
+        const form = document.querySelector('form');
+        const emailError = document.querySelector('#email_error');
+        const passError = document.querySelector('#pass_error');
+        form.addEventListener('submit',async(e)=>{
+            e.preventDefault();//page refresh huna bata rokxa
+            emailError.textContent='';
+            passError.textContent='';
+          
+
+            const email = form.email.value;
+            const password = form.password.value;
+            try{
+                const res = await fetch('/adminLogin',{
+                    method:'POST',
+                    body: JSON.stringify({ email , password }),
+                    headers:{'content-Type':'application/json'}
+                });
+                const data = await res.json();
+                console.log(data);
+                if(data.error){
+                    emailError.textContent=data.error.email;
+                    passError.textContent=data.error.password;
+                }
+                if(data.user){
+                    location.assign('/admin')
+                    
+                }
+                
+            }catch(error){
+                console.log(error);
+            }
+        })
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <form action="/" method="get">
+    <div  id="sidebar">
+        <a onclick ="hideSidebar()" href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+        <a href="">Home</a>
+        <a href=""> Menu</a>
+        <a href="">Order</a>
+        <a href="">Cart</a>
+        <a href="">profile</a>
+        <a href="">Notification</a>
+    </div> 
+   
+        <nav id="nav">
+            <a href="" ><img id="logo" src="./Logodb.png" alt=""></a>
+            <a class="hide" href="">Home</a>
+            <a class="hide" href=""> Menu</a>
+            <a class="hide" href="">Order</a>
+            <a class="hide" href="">Cart</a>
+            
+            <a href="" ><i id="profile" class="bi bi-person-fill"></i></a>
+            <input style="display: none;" onclick="togglenoti()" type="checkbox" name="not" id="not">
+            <label style="cursor: pointer;" class="hide" id="notf" for="not"><i  class="bi bi-bell-fill" style="font-size: 20px;"></i></label>
+            
+            </label>
+            <input onclick="toggleSidebar()" type="checkbox" name="toggle" id="toggle">
+            <label id="toggler"  for="toggle"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></label>
+        </nav >
+        
+            
+  
+        <div id="notification">
+            <h3>Notification</h3><br>
+            <span>aa</span>
+        </div>
+       
+
+
+        <div id="carouselExampleIndicators" class="carousel slide">
+            <div class="carousel-indicators">
+              <button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button  type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img id="slideimg1" src="./login page.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./pexels-ash-376464.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./pexels-chan-walrus-958545 (2).jpg" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button  class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span  class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span  class="visually-hidden">Previous</span>
+            </button>
+            <button  class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span  class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+   
+        <div id="cat">            
+        <a id="fahref" href=""><img id="food" src="./food.jpg" alt=""><span id="w-food">Food</span></a><br>
+
+        <a id="fahref" href=""><img id="drink" src="./pexels-pixabay-158053.jpg" alt=""><span id="w-drink">Drink</span></a>
+        <a id="fahref" href=""><img id="dessert" src="./pexels-vojtech-okenka-1055272.jpg" alt=""><span id="w-dessert">Dessert</span></a>
+    
+</div>
+<div id="meals">
+    <div id="mf">
+        <img id="meals-food" src="./food.jpg" alt="">
+        <h2 id="p-name" style="margin:0 50px">HamBurger</h2>
+        <p id="desc" style="margin:0 50px">Ham Burger only for you.</p>
+        <h3 id="price" style="margin:0 100px">$9.99</h3>
+        <button id="buy" type="submit">Buy Now</button>
+        <button id="ac">Add to cart</button>
+
+    </div>
+   
+</div>
+</form>
+
+<div id="footer">
+        
+        
+    <img id="ftlogo" src="./Logodb.png" alt="">
+    <p id="slogan">The Best food delivery service provider</p>
+    <a href=""><i class="bi bi-facebook"></i></a>
+    <a href=""><i class="bi bi-instagram"></i></a>
+    <a href=""><i class="bi bi-twitter"></i></a>
+    <a href=""><i class="bi bi-tiktok"></i></a>
+    
+   
+    <p id="cp">Copyright ©2024 DaalBhat</p>
+    
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
+
+<script>
+    window.addEventListener("scroll",function(){
+        var nav = document.querySelector("nav")
+        nav.classList.toggle("sticky",window.scrollY > 0)
+    })
+
+    function toggleSidebar() {
+        const sidebar = document.querySelector('#sidebar');
+        sidebar.style.display = sidebar.style.display === 'flex' ? 'none' : 'flex';
+
+    }
+
+    
+</script>
+</body>
+</html>

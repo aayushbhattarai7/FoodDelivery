@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+*{
+    margin: 0;
+    padding: 0;
+    font-family: poppins;
+      
+}
+#nav{
+   
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border: 2px solid lightgray;
+    width: 90%;
+    margin: 20px 75px;
+    border-radius: 20px;
+    height: 9vh;
+    box-shadow: 1px 2px 5px 1px lightgray;
+    z-index: 1;
+   
+    
+}#nav a{
+    text-decoration: none;
+    color: black;
+    font-size: bold;
+    
+}
+#nav a:hover{
+    color: #39C601;
+}#notf:hover{
+    color: #39C601;
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;}
+    #logo-div{
+        height: 28vh;
+    }
+
+#logo{
+    width: 40%;
+}
+
+#profile{
+    overflow: hidden;
+    font-size: 25px;
+}#pfs:hover{
+    color: #39C601;
+}
+#toggle{
+    display: none;
+}
+#toggler{
+    display: none;
+}
+#sidebar{
+position: fixed;
+top: 0;
+right: 0;
+height: 45vh;
+width: 250px;
+z-index: 999;
+background-image: linear-gradient( #CFD9DF, #E2EBF0);
+backdrop-filter: blur(10px);
+box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+display: none;
+flex-direction: column;
+}#sidebar a{
+    text-decoration: none;
+    color: black;
+    border: 2px solid white;
+    padding: 10px;
+}
+
+#sidebar a{
+    width: 100%;
+}#profs{
+    position: fixed;
+    top: 70px;
+    right: 230px;
+    height: 81vh;
+    width: 500px;
+    z-index: 999;
+    background-image: linear-gradient( #CFD9DF, #E2EBF0);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    justify-content: center;
+    align-items: center;
+    display: none;  
+}
+#profs h3{
+    font-size: 40px;
+    margin: 0 160px;
+    
+    
+}#profs-img{
+    width: 70px;
+    margin: 0 3px;
+}
+
+#infos span{
+    top: 10px;
+       align-items: center;
+   display: flex;
+   height: 0.5vh;
+   margin: 10px 20px;    
+}
+
+#logout{
+    margin: 0 65px;
+    background-color: #39C601;
+    outline: none;
+    border: none;
+    width: 150px;
+    height: 5vh;
+    border-radius: 20px;
+    color: black;
+    box-shadow: 3px 3px 3px 1px lightgray;
+}
+
+#edit{
+    margin:40px 16px;
+    background-color: #39C601;
+    outline: none;
+    border: none;
+    width: 180px;
+    height: 5vh;
+    border-radius: 20px;
+    color: black;
+    box-shadow: 3px 3px 3px 1px lightgray;
+}
+
+#logout:hover{
+    transform: scale(1.07);
+    color: white;
+}
+
+#edit:hover{
+    transform: scale(1.07);
+    color: white;
+}
+
+#p-img{
+    border: 2px solid black;
+    height: 10vh;
+    width: 80px;
+    border-radius: 40px;
+    margin: 50px 183px;
+}
+
+#notification{
+    position: fixed;
+    top: 70px;
+    right: 130px;
+    height: 45vh;
+    width: 250px;
+    z-index: 999;
+    background-image: linear-gradient( #CFD9DF, #E2EBF0);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+}#notification h3{
+    font-size: 20px;
+    margin: 0 60px;
+}
+
+#meals{
+    overflow: hidden;
+    box-shadow: 6px 10px 5px 10px lightgray;
+    margin: 80px 155px;
+    height: 20vh;
+    width: 80%;
+    display: block;
+ 
+   
+}
+#meals-food{
+    overflow: hidden;
+    width: 150px;
+   margin: 10px 60px;
+}
+#mf:hover{
+    box-shadow:6px 10px 5px 8px gray;
+}#p-name{
+    transform: translate(220px,-110px);
+    font-size: 20px;
+}#price{
+    transform: translate(220px,-110px);
+    font-size: 20px;
+}#quantity{
+    transform: translate(220px,-110px);
+
+}#quantity button{
+    border: none;
+    background-color: white;
+
+}
+#checkout{
+    overflow: hidden;
+    transform: translate(950px,-180px);
+    background-color: #39C601;
+    outline: none;
+    border: none;
+    width: 90px;
+    height: 4vh;
+    border-radius: 20px;
+    color: black;
+    box-shadow: 3px 3px 3px 1px lightgray;
+}#cancel{
+    overflow: hidden;
+    transform: translate(859px,-120px);
+    background-color: #39C601;
+    outline: none;
+    border: none;
+    width: 90px;
+    height: 4vh;
+    border-radius: 20px;
+    color: black;
+    box-shadow: 3px 3px 3px 1px lightgray;
+}
+    
+   
+#order-info span{
+    padding: 30px 10px;
+    font-weight: bold;
+}
+#orderd{
+    justify-content: center;
+    align-items: center;
+    margin-top: 8px;
+    margin-left: 800px;
+    flex-direction: column;
+    display: flex;
+    
+}#orderd span{
+    padding: 30px 10px;
+}
+
+#buy:hover{
+   transform: scale(1.07);
+   color: white;
+}
+#footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+    margin-top: 199.8px;
+    margin-right: 200px;
+    background-color: #ecb464;
+    position:absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#footer a{
+    text-decoration: none;
+    color: black;
+    justify-content: space-between;
+    display: flex;
+    padding: 10px 30px;
+    transform: translate(50px,30px);
+    align-items: center;
+    overflow: hidden;
+    
+    
+}
+#ftlogo{
+    transform: translate(20px,-70px);
+    width: 280px;
+    overflow: hidden;
+    position: absolute;
+    top: -30px;
+    
+
+    
+}#slogan{
+    transform: translate(20px,-20px);
+    overflow: hidden;
+    position: absolute;
+        top: 80px;
+        
+    
+}
+#cp{
+    transform: translate(10px,100px);
+    font-weight: bold;
+    overflow: hidden;
+    position: absolute;
+    top: 25px;
+}
+
+li{
+    text-decoration: none;
+    transform: translate(330px,20px);
+    list-style-type: none;
+    
+}#footer a:hover{
+    color: white;
+}
+@media(max-width:900px){
+    .hide{
+        display: none;
+        
+    }
+    #toggler{
+        display: flex;
+    }
+    #nav{
+        margin: 15px 15px;
+    } 
+
+    
+    #meals{
+        margin: 50px 120px;
+    }
+    
+}
+@media(max-width:1300px){
+    #nav{
+        margin: 10px 50px;
+    }#meals{
+        margin: 100px 170px;
+        width: 80%;
+    }#footer{
+        margin: 162px 0;
+    }
+    #meals{
+        transform: translate(-20px,0);
+        height: 21vh;
+        
+    } #meals-food{
+        width: 60px;
+        height: 60px;
+    }#p-name{
+        font-size: 15px;
+    }#price{
+        font-size: 15px;
+        transform: translate(-30px,0);
+    }#buy{
+        height: 24px;
+        transform: translate(-35px,-10px);
+    }#order-info{
+        transform: translate(-20px,130px);
+        
+    }#order-info span{
+        font-size: 10px;
+        padding: 6px;
+        display: flex;
+        white-space: nowrap;
+    }#orderd{
+        margin: 10px 0px;
+        transform: translate(350px,298px);
+    }#orderd span{
+        font-size: 10px;
+        padding: 6px;
+        white-space: nowrap;
+    }
+}
+@media(max-width:1200px){
+    #nav{
+        margin: 10px 60px;
+    }#meals{
+        margin: 100px 170px;
+        width: 80%;
+    }#footer{
+        margin: 162px 0;
+    }
+    #meals{
+        transform: translate(-20px,0);
+        height: 21vh;
+        
+    } #meals-food{
+        width: 60px;
+        height: 60px;
+    }#p-name{
+        font-size: 15px;
+    }#price{
+        font-size: 15px;
+        transform: translate(-30px,0);
+    }#buy{
+        height: 24px;
+        transform: translate(-35px,-10px);
+    }#order-info{
+        transform: translate(-20px,130px);
+        
+    }#order-info span{
+        font-size: 10px;
+        padding: 6px;
+        display: flex;
+        white-space: nowrap;
+    }#orderd{
+        margin: 10px 0px;
+        transform: translate(350px,298px);
+    }#orderd span{
+        font-size: 10px;
+        padding: 6px;
+        white-space: nowrap;
+    }#slogan{
+    margin: 0 -50px;
+    display: flex;
+}#ftlogo{
+    margin: 0 -30px;
+}
+}
+
+
+@media(max-width:1100px){
+    #nav{
+        margin: 10px 60px;
+    }#meals{
+        transform: translate(-70px,0);
+        height: 21vh;
+        
+    } #meals-food{
+        width: 60px;
+        height: 60px;
+    }#p-name{
+        font-size: 15px;
+    }#price{
+        font-size: 15px;
+        transform: translate(-30px,0);
+    }#buy{
+        height: 24px;
+        transform: translate(-35px,-10px);
+    }#order-info{
+        transform: translate(-120px,130px);
+        
+    }#order-info span{
+        font-size: 10px;
+        padding: 6px;
+        display: flex;
+        white-space: nowrap;
+    }#orderd{
+        margin: 10px 0px;
+        transform: translate(240px,298px);
+    }#orderd span{
+        font-size: 10px;
+        padding: 6px;
+        white-space: nowrap;
+    }
+}
+
+@media(max-width:800px){
+    #nav{
+        margin: 10px 45px;
+    }#meals{
+        transform: translate(-80px,0);
+        height: 21vh;
+        
+    } #meals-food{
+        width: 60px;
+        height: 60px;
+    }#p-name{
+        font-size: 15px;
+    }#price{
+        font-size: 15px;
+        transform: translate(-30px,0);
+    }#buy{
+        height: 24px;
+        transform: translate(-35px,-10px);
+    }#order-info{
+        transform: translate(-150px,130px);
+        
+    }#order-info span{
+        font-size: 10px;
+        padding: 6px;
+        display: flex;
+        white-space: nowrap;
+    }#orderd{
+        margin: 10px 0px;
+        transform: translate(220px,298px);
+    }#orderd span{
+        font-size: 10px;
+        padding: 6px;
+        white-space: nowrap;
+    }
+}
+@media(max-width:700px){
+    #meals{
+        transform: translate(-80px,0);
+        height: 21vh;
+        
+    } #meals-food{
+        width: 60px;
+        height: 60px;
+    }#p-name{
+        font-size: 15px;
+    }#price{
+        font-size: 15px;
+        transform: translate(-30px,0);
+    }#buy{
+        height: 24px;
+        transform: translate(-35px,-10px);
+    }#order-info{
+        transform: translate(-210px,130px);
+        
+    }#order-info span{
+        font-size: 10px;
+        padding: 6px;
+        display: flex;
+        white-space: nowrap;
+    }#orderd{
+        margin: 10px 0px;
+        transform: translate(190px,298px);
+    }#orderd span{
+        font-size: 10px;
+        padding: 6px;
+        white-space: nowrap;
+    }
+}
+
+@media(max-width:600px){
+    #nav{
+       transform: translate(-16px,0);
+        
+    }#meals{
+        transform: translate(-85px,0);
+        height: 21vh;
+        
+    } #meals-food{
+        width: 60px;
+        height: 60px;
+    }#p-name{
+        font-size: 15px;
+    }#price{
+        font-size: 15px;
+        transform: translate(-30px,0);
+    }#buy{
+        height: 24px;
+        transform: translate(-35px,-10px);
+    }#order-info{
+        transform: translate(-300px,130px);
+        
+    }#order-info span{
+        font-size: 10px;
+        padding: 6px;
+        display: flex;
+        white-space: nowrap;
+    }#orderd{
+        margin: 10px 0px;
+        transform: translate(140px,298px);
+    }#orderd span{
+        font-size: 10px;
+        padding: 6px;
+        white-space: nowrap;
+    }#footer{
+        height: 20vh;
+        margin: 120px 0;
+    }#cp{
+        margin: -12px 0;
+    }
+}
+@media(max-width:500px){
+   
+     #nav{
+        margin: 10px 27px;
+       width: 400px;
+    }#meals{
+        margin: 100px 125px;
+        
+    }.sticky{
+        margin: 10px 1px;
+        
+    }#order-info{
+        transform: translate(-300px,130px);
+        
+    }#order-info span{
+        font-size: 10px;
+        padding: 6px;
+        display: flex;
+        white-space: nowrap;
+    }#orderd{
+        margin: 10px 0px;
+        transform: translate(140px,298px);
+    }#orderd span{
+        font-size: 10px;
+        padding: 6px;
+        white-space: nowrap;
+    }
+}
+
+

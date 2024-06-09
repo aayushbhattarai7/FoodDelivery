@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.datatables.net/v/bs4/dt-2.0.3/datatables.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./adminstyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div  id="sidebar">
+        <a onclick ="hideSidebar()" href=""><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a>
+        <a href="/AdminHome">Dashboard</a>
+        <a href="/Menu"> Menu</a>
+        <a href="/order">Order</a>
+        <a href="">profile</a>
+        <a href="">Notification</a>
+    </div> 
+   
+        <nav id="nav">
+            <a  href="/AdminHome"><img id="logo" src="./Logodb.png" alt=""></a>
+            <a class="hide" href="/AdminHome">Home</a>
+           
+            <a class="hide" href="/adminOrder">Order</a>
+            <input style="display: none;" type="checkbox" onclick="profiles()" name="pf" id="pf">
+            
+        </nav >
+        
+        <div id="notification">
+            <h3>Notification</h3><br>
+            <span>aa</span>
+        </div>
+        <form id="uploads" action="/admin" method="post" enctype="multipart/form-data" >
+        <div id="upload">
+            <input type="text" name="name" id="name" placeholder="   Item Name">
+            <input type="text" name="desc" id="desc" placeholder="   Description">
+            <input type="text" name="price" id="price" placeholder="   price">
+            <input type="file" name="image" id="image" >
+            <button type="submit">Add Item</button>
+        </div>
+
+        </form>
+    <div id="meals" class="container">
+    <div class="row my-4">
+        <div class="table-responsive">
+            <% if (items !='') { %>
+                <table id="table " class="table table-striped text-center">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Description</th>
+                        <th>Price</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% items.forEach((row, index) => { %>
+                        <tr>
+                            <td><%= index  %></td>
+                            <td><%= row.name  %></td>
+                            <td><%= row.desc  %></td>
+                            <td><%= row.price  %></td>
+                            <td><img src="<%= row.image %>" width="50" class="img-thumbnail"></td>
+                            <td><a style="text-decoration: none;" href="/edit/<%= row._id %>">Edit</a>
+                              <a style="text-decoration: none;" href="/delete/<%= row._id %>">Delete</a> </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+                </table>
+            <% }else{%>
+                <h1 >No Items Added</h1>
+           <% } %>
+            <div class="col-lg-200">
+               
+
+        
+    </div>
+    </div> 
+    </div>
+    <script src="https://cdn.datatables.net/v/bs4/dt-2.0.3/datatables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function (){
+        $("table").DataTable({
+            order: [0, 'desc']
+        });
+    });
+
+    
+</script>
+
+        </div>     
+<script src="https://cdn.datatables.net/v/bs4/dt-2.0.3/datatables.min.js"></script>
+<div id="footer">
+        
+        
+    <img id="ftlogo" src="./Logodb.png" alt="">
+    <p id="slogan">The Best food delivery service provider</p>
+    <a href=""><i class="bi bi-facebook"></i></a>
+    <a href=""><i class="bi bi-instagram"></i></a>
+    <a href=""><i class="bi bi-twitter"></i></a>
+    <a href=""><i class="bi bi-tiktok"></i></a>
+    
+   
+    <p id="cp">Copyright ©2024 DaalBhat</p>
+    
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>   
+
+<script>
+    window.addEventListener("scroll",function(){
+        var nav = document.querySelector("nav")
+        nav.classList.toggle("sticky",window.scrollY > 0)
+    })
+
+    function toggleSidebar() {
+        const sidebar = document.querySelector('#sidebar');
+        sidebar.style.display = sidebar.style.display === 'flex' ? 'none' : 'flex';
+
+    }
+
+    function profiles() {
+        var profile = document.querySelector('#profs')
+        profile.style.display = profile.style.display === 'inline' ? 'none' : 'inline';    }
+    function togglenoti() {
+        const notifications = document.querySelector('#notification');
+        notifications.style.display = notifications.style.display === 'flex' ? 'none' : 'flex';
+
+    }
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: poppins;
+}
+
+#log{
+    height: 45vh;
+    width: 400px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 150px 520px;
+    box-shadow: 2px 2px 2px 2px gray;
+    padding: 30px 0;
+}
+#logo{
+    width: 240px;
+    height: 240px;
+    top: -90px;
+    left: 70px;
+    position: absolute;
+}
+#heading{
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    left: 150px;
+    position: absolute;
+}input[type=text]{
+    width: 250px;
+    border-color: black;
+    height: 4vh;
+    border-radius: 7px;
+    position: relative;
+    top: 110px;
+    left: 75px;
+    display: block;
+    
+}input[type=password]{
+    width: 250px;
+    border-color: black;
+    height: 4vh;
+    border-radius: 7px;
+    position: relative;
+    top: 110px;
+    left: 75px;
+    display: block;
+}button[type=submit]{
+    width: 250px;
+    position: relative;
+    top: 120px;
+    left: 75px;
+    height: 5vh;
+    display: block;
+    background-color: #2f8d00;
+    border: none;
+    color: white;
+}a{
+    position: relative;
+    top: 130px;
+    left: 75px;
+    display: block;
+    text-decoration: none;
+    color: black;
+}span{
+    width: 250px;
+    position: relative;
+    top: 110px;
+    left: 60px;
+    display: block;
+}::placeholder{
+    color: black;
+}button[type=submit]:hover{
+    transform: scale(1.06)
+}

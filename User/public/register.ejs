@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./signupstyle.css">
+    
+    
+</head>
+<body>
+   <form action="/register" method="post">
+    <div id="Signup">
+        <img src="./Logodb.png" alt="" id="logo">
+        <h1 id="heading">Signup</h1>
+        <input type="text" name="full_name" id="name" onkeyup="" placeholder="   Enter your full name here...">
+        <span name="name-error" id="name_error"></span>
+        <input type="text" id="email" name="email" onkeyup="" placeholder="   Enter your Email here...">
+        <span name="email_error" id="email_error"></span>
+        <input type="number" name="phone_number" id="num" onkeyup="" placeholder="   Enter your Phone nunber here...">
+        <span name="num_error" id="num_error"></span>
+        <input  type="password" name="password" id="pass" onkeyup="" placeholder="   Enter your password here...">
+        <span name="pass_error" id="pass_error"></span>
+        <input type="text" name="confirm_password" id="cpass" onkeyup="" placeholder="   Re-Enter password here...">
+        <span name="cpass_error" id="cpass_error"></span>
+        <button onclick="validatez()" type="submit" value="Register" id="signup-btn">Signup</button>
+        <a id="lp" href="">Already have an account?</a>
+    </div>
+</form>
+    <script>
+        
+        
+        var emails = document.getElementById("email");
+        var emailerror = document.getElementById("email_error");
+
+        function validatez(){
+            if(!emails.value.match(/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/)){
+                emailerror.innerHTML = "*Please, Enter a valid email";
+                emails.style.border= "3px solid red";
+                emailerror.style.color ="red";
+                return false;
+            }else{
+                emailerror.innerHTML = "Valid Email";
+                emailerror.style.color = "Green";
+                emails.style.border = "3px solid green";
+                return true;
+            }
+
+            var namerror = document.getElementById("name_error");
+        var names = document.getElementById("name");
+        if(names.value == "") {
+            namerror.innerHTML = "*Please! Enter your full name...";
+            names.style.border = "3px solid red";
+            namerror.style.color = "Red";
+            return false;
+        } else {
+            namerror.innerHTML = " ";
+                names.style.border = "3px solid green";
+                return true;
+        }
+        
+        var numbers = document.getElementById("num");
+        var nmerror = document.getElementById("num_error");
+        if(numbers.value.length <= 8) {
+            nmerror.innerHTML = "*Please,Enter valid number";
+            numbers.style.border = "3px solid red";
+            nmerror.style.color = "Red";
+            return false;
+        } else {
+            nmerror.innerHTML = " ";
+                numbers.style.border = "3px solid green";
+                return true;
+        }
+        var passwords = document.getElementById("pass");
+        var passerror = document.getElementById("pass_error");
+        var conpassword = document.getElementById("cpass")
+        var buttons = document.getElementById("btns");
+            if(!passwords.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}$/)){
+                passerror.innerHTML = "*Weak password!! Enter special character too...";
+                passwords.style.border= "3px solid red";
+                passerror.style.fontSize = "13px";
+                passerror.style.color ="red";
+               
+                return false;
+            }else{
+                passerror.innerHTML = "Strong password";
+                passerror.style.color = "Green";
+                passwords.style.border = "3px solid green";
+                passerror.style.fontSize = "Medium";
+                return true;
+            }
+            var passwords = document.getElementById("pass");
+            var cpasserror = document.getElementById("cpass_error");
+            var conpassword = document.getElementById("cpass")
+            if(conpassword.value != passwords.value){
+                cpasserror.innerHTML = "*Please,Enter the same password";
+                conpassword.style.border = "3px solid red";
+                cpasserror.style.color = "Red";
+                return false;
+            } else {
+                cpasserror.innerHTML = "Password matched";
+                    conpassword.style.border = "3px solid green";
+                    cpasserror.style.color = "Green";
+                    return true;
+            }
+        
+    }
+    function namee(){
+        
+    }
+
+    function nums(){
+       
+
+    }
+    function passvalidate(){
+      
+    }
+    function confirmpass(){
+     
+        
+    }
+    
+
+    </script>
+</body>
+</html>
