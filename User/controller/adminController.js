@@ -7,7 +7,7 @@ const Admin = require('../models/AdminModel')
 
 
 
-var storage = multer.diskStorage({
+const storage = multer.diskStorage({
     destination: function(req, file, cb){
         cb(null,'./uploads');
     },
@@ -15,7 +15,7 @@ var storage = multer.diskStorage({
         cb(null,file.fieldname+"_"+Date.now()+"_"+file.originalname);
     }
 })
-var upload = multer({
+const upload = multer({
     storage:storage
 }).single('image');
 
